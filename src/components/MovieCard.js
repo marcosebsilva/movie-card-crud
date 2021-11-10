@@ -4,9 +4,16 @@ import PropTypes from 'prop-types';
 
 class MovieCard extends React.Component {
   render() {
-    const { movie: { title, subtitle, storyline, id } } = this.props;
+    const { movie: { title, subtitle, storyline, id, imagePath } } = this.props;
     return (
-      <div data-testid="movie-card">
+      <div
+        data-testid="movie-card"
+        style={
+          {
+            backgroundImage: `url(../${imagePath})`,
+          }
+        }
+      >
         <h1>{title}</h1>
         <h2>{subtitle}</h2>
         <p>{storyline}</p>
