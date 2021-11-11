@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 import * as movieAPI from '../services/movieAPI';
-import { Loading } from '../components';
+import { Loading, Footer } from '../components';
+import starIcon from '../images/star.png';
 
 class MovieDetails extends Component {
   constructor(props) {
@@ -40,25 +41,65 @@ class MovieDetails extends Component {
 
   returnedMovie() {
     const { movie:
-      { id, title, storyline, imagePath, genre, rating, subtitle },
+      { id,
+        title,
+        storyline,
+        imagePath,
+        genre,
+        rating,
+        subtitle,
+      },
     } = this.state;
     return (
-      <div>
-        <img alt="Movie Cover" src={ `../${imagePath}` } />
-        <p>{ title }</p>
-        <p>{ `Subtitle: ${subtitle}` }</p>
-        <p>{ `Storyline: ${storyline}` }</p>
-        <p>{ `Genre: ${genre}` }</p>
-        <p>{ `Rating: ${rating}` }</p>
-        <Link to="/">VOLTAR</Link>
-        <Link to={ `/movies/${id}/edit` }>EDITAR</Link>
+      <>
+        <div className="c-movie-details">
+          <img
+            alt="Movie Cover"
+            src={ `../${imagePath}` }
+            className="c-movie-details__image"
+          />
+          <div className="movie-details">
+            <h1 className="movie-details__title">{ title }</h1>
+            <h2 className="movie-details__subtitle">{ `${subtitle}` }</h2>
+            <div className="c-genre-edit">
+              <p className="movie-details__genre">{ `${genre}` }</p>
+              <Link
+                to={ `/movies/${id}/edit` }
+                className="movie-details__edit"
+              >
+                EDITAR
+              </Link>
+            </div>
+            <p className="movie-details__storyline">{ `${storyline}` }</p>
+            <div className="movie-details__rating">
+              <img src={ starIcon } alt="star icon" />
+              <p>{ `${rating} / 5` }</p>
+            </div>
+            <div className="c-bottom-buttons">
+              <Link
+                to="/"
+                className="movie-details__back"
+              >
+                VOLTAR
+              </Link>
+              <Link
+                to="/"
+                onClick={ this.deleteThisMovie }
+                className="movie-details__delete"
+              >
+                DELETAR
+              </Link>
+            </div>
+          </div>
+        </div>
         <Link
-          to="/"
-          onClick={ this.deleteThisMovie }
+          to="/movies/new"
+          className="add-button"
         >
-          DELETAR
+          ADICIONAR CARTÃO
         </Link>
-      </div>
+        <Footer />
+      </>
     );
   }
 
