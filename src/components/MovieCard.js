@@ -8,6 +8,7 @@ class MovieCard extends React.Component {
     return (
       <div
         data-testid="movie-card"
+        className="movie-card"
         style={
           {
             backgroundImage: `url(../${imagePath})`,
