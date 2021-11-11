@@ -1,5 +1,99 @@
-body {
-  background-color: whitesmoke;
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+
+* {
   box-sizing: border-box;
+  color: white;
+  font-family: Comfortaa , cursive;
+  margin: 0;
+  text-decoration: none;
 }
 
+body {
+  background-color: whitesmoke;
+}
+
+.movie-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 5vh;
+}
+
+.movie-card {
+  background-color: #060000;
+  background-position: -50px 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 10px;
+  height: 30vh;
+  margin: 0.5vw;
+  min-height: 280px;
+  min-width: 500px;
+  overflow: hidden;
+  position: relative;
+  transition: 0.3s;
+  width: 25vw;
+}
+
+.movie-card:hover {
+  transform: scale(1.1);
+}
+
+.movie-card__image {
+  opacity: 0.6;
+  position: relative;
+  right: 10%;
+}
+
+.card-details {
+  background: linear-gradient(270deg, #060000 49%, rgba(6, 0, 0, 0) 103.39%);
+
+  /* above property came from figma */
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin-left: 50%;
+  padding: 5% 5% 0 0;
+  position: absolute;
+  top: 0;
+}
+
+.card-details__title {
+  font-size: 1.25vw;
+}
+
+.card-details__subtitle {
+  font-size: 1vw;
+  margin-bottom: 25px;
+  margin-top: 2px;
+}
+
+.card-details__sinopse {
+  font-size: 0.7vw;
+}
+
+.card-details__button {
+  background-color: #f8002f;
+  border-radius: 5px;
+  bottom: 40px;
+  font-size: 0.5vw;
+  font-weight: 700;
+
+  /* justify-self: baseline; */
+  max-width: 45%;
+  padding: 15px;
+  position: absolute;
+  text-align: center;
+}
+
+.add-button {
+  background-color: #e7d052;
+  border-radius: 10px;
+  bottom: 20%;
+  color: black;
+  margin: 0 auto;
+  max-width: 300px;
+  padding: 20px;
+  position: absolute;
+  text-align: center;
+}

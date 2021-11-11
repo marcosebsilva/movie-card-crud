@@ -27,24 +27,31 @@ class MovieList extends Component {
     });
   }
 
-  render() {
-    const { movies, movieReady } = this.state;
+  renderMovieList(movies) {
     return (
       <>
-        <div
-          data-testid="movie-list"
-          className="movie-list"
-        >
-          { movieReady
-            ? movies.map((movie) => <MovieCard key={ movie.title } movie={ movie } />)
-            : <Loading /> }
-        </div>
         <Link
           to="/movies/new"
+          className="add-button"
         >
           ADICIONAR CARTÃO
         </Link>
+        {movies.map((movie) => <MovieCard key={ movie.title } movie={ movie } />)}
       </>
+    );
+  }
+
+  render() {
+    const { movies, movieReady } = this.state;
+    return (
+      <div
+        data-testid="movie-list"
+        className="movie-list"
+      >
+        { movieReady
+          ? this.renderMovieList(movies)
+          : <Loading /> }
+      </div>
     );
   }
 }
