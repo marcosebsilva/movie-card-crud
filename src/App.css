@@ -8,6 +8,10 @@
   text-decoration: none;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 body {
   background-color: whitesmoke;
 }
@@ -49,7 +53,7 @@ body {
 .card-details {
   background: linear-gradient(270deg, #060000 49%, rgba(6, 0, 0, 0) 103.39%);
 
-  /* above property came from figma */
+  /* background property came from figma */
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -57,42 +61,48 @@ body {
   padding: 5% 5% 0 0;
   position: absolute;
   top: 0;
+  width: 50%;
 }
 
 .card-details__title {
-  font-size: 1.25vw;
+  font-size: calc(6px + 1.2vh);
 }
 
 .card-details__subtitle {
-  font-size: 1vw;
+  font-size: calc(4px + 1vh);
   margin-bottom: 25px;
   margin-top: 2px;
 }
 
 .card-details__sinopse {
-  font-size: 0.7vw;
+  font-size: calc(6px + 0.7vh);
+  max-height: 130px;
+  overflow: scroll;
 }
 
 .card-details__button {
   background-color: #f8002f;
   border-radius: 5px;
   bottom: 40px;
-  font-size: 0.5vw;
+  font-size: calc(4px + 0.5vh);
   font-weight: 700;
-
-  /* justify-self: baseline; */
   max-width: 45%;
   padding: 15px;
   position: absolute;
   text-align: center;
+  transition: 0.1s;
+}
+
+.card-details__button:hover {
+  background-color: #bd0224;
 }
 
 .add-button {
-  background-color: red;
+  background-color: #e7d052;
   border-radius: 10px;
   color: black;
   display: block;
-  margin: 1vh auto 13vh;
+  margin: 50px auto 100px;
   padding: 20px;
   text-align: center;
   transition: 0.4s;
