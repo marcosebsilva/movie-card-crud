@@ -17,6 +17,7 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   margin-top: 5vh;
+  min-height: 100%;
 }
 
 .movie-card {
@@ -87,13 +88,25 @@ body {
 }
 
 .add-button {
-  background-color: #e7d052;
+  background-color: red;
   border-radius: 10px;
-  bottom: 20%;
   color: black;
-  margin: 0 auto;
-  max-width: 300px;
+  display: block;
+  margin: 1vh auto 13vh;
   padding: 20px;
-  position: absolute;
   text-align: center;
+  transition: 0.4s;
+  width: 300px;
+}
+
+.add-button:hover {
+  background-color: #bea82a;
+}
+
+.footer {
+  background-color: #060000;
+  bottom: 0;
+  height: 80px;
+  position: fixed;
+  width: 100%;
 }
