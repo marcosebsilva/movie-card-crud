@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 class MovieCard extends React.Component {
   render() {
     const { movie:
-      { title = 'no storyline',
+      { title = 'no title',
         subtitle = 'no subtitle',
         storyline = 'no storyline',
         id,

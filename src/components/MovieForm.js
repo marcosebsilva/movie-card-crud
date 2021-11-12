@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Footer } from '.';
 
 class MovieForm extends React.Component {
   constructor(props) {
@@ -22,19 +23,17 @@ class MovieForm extends React.Component {
     const { title } = this.state;
 
     return (
-      <div>
-        <label htmlFor="movie_title">
-          <input
-            placeholder="Insira o título"
-            id="movie_title"
-            type="text"
-            className="validate"
-            value={ title }
-            onChange={ (event) => this.updateMovie('title', event.target.value) }
-          />
-          Título
-        </label>
-      </div>
+      <label htmlFor="movie_title" className="movie-form__row">
+        Título
+        <input
+          placeholder="Insira o título"
+          id="movie_title"
+          type="text"
+          className="validate movie-form__input"
+          value={ title }
+          onChange={ (event) => this.updateMovie('title', event.target.value) }
+        />
+      </label>
     );
   }
 
@@ -42,18 +41,17 @@ class MovieForm extends React.Component {
     const { subtitle } = this.state;
 
     return (
-      <div>
-        <label htmlFor="movie_subtitle">
-          <input
-            placeholder="Insira o subtítulo"
-            id="movie_subtitle"
-            type="text"
-            value={ subtitle }
-            onChange={ (event) => this.updateMovie('subtitle', event.target.value) }
-          />
-          Subtítulo
-        </label>
-      </div>
+      <label htmlFor="movie_subtitle" className="movie-form__row">
+        Subtítulo
+        <input
+          placeholder="Insira o subtítulo"
+          id="movie_subtitle"
+          type="text"
+          className="movie-form__input"
+          value={ subtitle }
+          onChange={ (event) => this.updateMovie('subtitle', event.target.value) }
+        />
+      </label>
     );
   }
 
@@ -61,18 +59,17 @@ class MovieForm extends React.Component {
     const { imagePath } = this.state;
 
     return (
-      <div className="row">
-        <label htmlFor="movie_image">
-          <input
-            placeholder="Insira o caminho da imagem"
-            id="movie_image"
-            type="text"
-            value={ imagePath }
-            onChange={ (event) => this.updateMovie('imagePath', event.target.value) }
-          />
-          Imagem
-        </label>
-      </div>
+      <label htmlFor="movie_image" className="movie-form__row">
+        Imagem
+        <input
+          placeholder="Insira o caminho da imagem"
+          id="movie_image"
+          type="text"
+          value={ imagePath }
+          className="movie-form__input"
+          onChange={ (event) => this.updateMovie('imagePath', event.target.value) }
+        />
+      </label>
     );
   }
 
@@ -80,87 +77,84 @@ class MovieForm extends React.Component {
     const { storyline } = this.state;
 
     return (
-      <div>
-        <label htmlFor="movie_storyline">
-          <textarea
-            id="movie_storyline"
-            value={ storyline }
-            onChange={ (event) => this.updateMovie('storyline', event.target.value) }
-          />
-          Sinopse
-        </label>
-      </div>
+      <label htmlFor="movie_storyline" className="movie-form__row">
+        Sinopse
+        <textarea
+          className="movie-form__input"
+          id="movie_storyline"
+          value={ storyline }
+          onChange={ (event) => this.updateMovie('storyline', event.target.value) }
+        />
+      </label>
     );
   }
 
   renderGenreSelection() {
     const { genre } = this.state;
     return (
-      <div>
-        <label htmlFor="movie_genre">
-          Gênero
-          <select
-            id="movie_genre"
-            value={ genre }
-            onChange={ (event) => this.updateMovie('genre', event.target.value) }
-          >
-            <option value="action">Ação</option>
-            <option value="comedy">Comédia</option>
-            <option value="thriller">Suspense</option>
-            <option value="fantasy">Fantasia</option>
-          </select>
-        </label>
-      </div>
+      <label htmlFor="movie_genre" className="movie-form__row">
+        Gênero
+        <select
+          className="movie-form__input"
+          id="movie_genre"
+          value={ genre }
+          onChange={ (event) => this.updateMovie('genre', event.target.value) }
+        >
+          <option value="action">Ação</option>
+          <option value="comedy">Comédia</option>
+          <option value="thriller">Suspense</option>
+          <option value="fantasy">Fantasia</option>
+        </select>
+      </label>
     );
   }
 
   renderRatingInput() {
     const { rating } = this.state;
     return (
-      <div>
-        <label htmlFor="movie_rating">
-          <input
-            placeholder="Dê a avaliação do filme"
-            id="movie_rating"
-            type="number"
-            step={ 0.1 }
-            min={ 0 }
-            max={ 5 }
-            value={ rating }
-            onChange={ (event) => this.updateMovie('rating', event.target.value) }
-          />
-          Avaliação
-        </label>
-      </div>
+      <label htmlFor="movie_rating" className="movie-form__row">
+        Avaliação
+        <input
+          className="movie-form__input"
+          placeholder="Dê a avaliação do filme"
+          id="movie_rating"
+          type="number"
+          step={ 0.1 }
+          min={ 0 }
+          max={ 5 }
+          value={ rating }
+          onChange={ (event) => this.updateMovie('rating', event.target.value) }
+        />
+      </label>
     );
   }
 
   renderSubmitButton() {
     return (
-      <div>
-        <button
-          type="button"
-          onClick={ this.handleSubmit }
-        >
-          Submit
-        </button>
-      </div>
+      <button
+        type="button"
+        onClick={ this.handleSubmit }
+        className="add-button"
+      >
+        Submit
+      </button>
     );
   }
 
   render() {
     return (
-      <div>
-        <form>
+      <>
+        <form className="movie-form">
           {this.renderTitleInput()}
           {this.renderSubtitleInput()}
           {this.renderImagePathInput()}
           {this.renderStorylineInput()}
           {this.renderGenreSelection()}
           {this.renderRatingInput()}
-          {this.renderSubmitButton()}
         </form>
-      </div>
+        {this.renderSubmitButton()}
+        <Footer />
+      </>
     );
   }
 }
