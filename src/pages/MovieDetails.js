@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 import * as movieAPI from '../services/movieAPI';
 import { Loading, Footer } from '../components';
@@ -50,6 +50,8 @@ class MovieDetails extends Component {
         subtitle,
       },
     } = this.state;
+
+    if (!id) return (<Redirect to="/not-found" />);
     return (
       <>
         <div className="c-movie-details">
