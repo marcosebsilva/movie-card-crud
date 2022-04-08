@@ -1,22 +1,87 @@
-## Movie Card CRUD
-Projeto simples no formato CRUD (create, read, update, delete) pra praticar o básico do React.
-##### O que eu aprendi com o projeto?
-  * Manipular componentes stateful no REACT
-  * Usar componentes de classe no REACT(e o porque nao usar)
-  * Um pouquitito de CSS
-  * Como se comunicar com uma API (mockada) usando React
-  * Como usar o React Router e demais bibliotecas disponíveis pro REACT
-  * Como deixar o código organizado usando o linter, proptypes e BEM CSS
 
-## Veja o app funcionando clicando [aqui.](https://movie-card-crud-inky.vercel.app/)
-### Detalhes
-Esse projeto foi feito em um contexto no qual eu não fazia a menor idéia da existência dos componentes funcionais e meu conhecimento
-em React tava em um estado bem embrionário. Dito isso, tenho bastante orgulho de como ele se saiu.
+# Movie Card Crud
 
-**Boa parte do que foi alterado recentemente ta relacionado ao CSS da página, pra deixar ela um pouquinho mais apresentável.**
+Display de cartas de filmes no qual o usuário pode visualizar, criar, editar ou deletar qualquer um dos cards.
 
 
-_Esse projeto foi feito durante a Trybe._
+## Demonstração
 
-_Você pode ver o repositório original clicando [aqui.](https://github.com/tryber/sd-013-b-project-movie-card-library-crud)_
-_Tem muita gente legal e habilidosa por lá, então não exite em dar uma explorada no perfil dos meus colegas._
+Você pode ver o aplicativo funcionando clicando [aqui.](https://movie-card-crud-inky.vercel.app)
+![Home demo](/src/images/demo/home.png "homepage")
+
+![Card details](/src/images/demo/card_details.png "card detail")
+
+![Edit or Create](/src/images/demo/card_edit&create.png "edit card")
+
+
+## Rodando localmente
+### Pré requisitos:
+- [nodejs](https://nodejs.org/en/)
+- [npm](https://www.npmjs.com)
+
+
+#### Estrutura base
+```bash
+root
+┣ public
+┃ ┣ images
+┣ src
+┃ ┣ components
+┃ ┣ images
+┃ ┃ ┣ demo
+┃ ┣ pages
+┃ ┣ services
+```
+
+Clone o projeto
+
+```bash
+  git clone git@github.com:marcosebsilva/movie-card-crud.git
+```
+
+Entre no diretório do projeto
+
+```bash
+  cd /movie-card-crud
+```
+
+Instale as dependências
+
+```bash
+  npm install
+```
+
+Inicie o servidor
+
+```bash
+  npm start
+```
+
+
+## Stack utilizada
+
+**Front-end:** React, CSS, HTML
+
+**Back-end:** A simulação do comportamento de uma API está disponível em src/services e foi feita pela [Trybe](https://www.betrybe.com).
+
+
+
+## Aprendizados
+
+Consegui compreender conceitos importantes do React, como:
+
+- Renderização condicional
+- Gerenciamento de estado **local**
+- Como deixar um código bem organizadinho definindo os prop-types, por exemplo
+- Como funcionam os components de classe
+- React Router v5
+
+#### E de quebra ainda deu pra entender mais sobre
+- CSS e o abençoado BEM
+- HTML Semântico
+
+
+
+## Melhorias
+Responsividade para dispositivos mobile.
+
