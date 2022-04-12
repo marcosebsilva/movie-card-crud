@@ -6,7 +6,7 @@ Display de cartas de filmes no qual o usuário pode visualizar, criar, editar ou
 
 ## Demonstração
 
-Você pode ver o aplicativo funcionando clicando [aqui.](https://movie-card-crud-inky.vercel.app)
+### Você pode ver o aplicativo funcionando clicando [aqui.](https://movie-card-crud-inky.vercel.app)
 ![Home demo](/src/images/demo/home.png "homepage")
 
 ![Card details](/src/images/demo/card_details.png "card detail")
